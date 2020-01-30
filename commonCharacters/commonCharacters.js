@@ -15,10 +15,11 @@ var commonCharacters = function(string1, string2) {
     //split the string using ''
     let firstStr = string1.split('');
     //create an array of the strings and compare it using slice at 1
-    let stringToCompare = Array.from(arguments).slice(0); 
+    let stringToCompare = arguments[1];=-[]'
+    )'
     //console.log(firstStr)
     
-    //console.log(stringToCompare);
+    console.log(stringToCompare);
     //loop through that new array 
     for (var i = 0; i < firstStr.length; i++) {
         let currentLtr = firstStr[i];
@@ -28,7 +29,7 @@ var commonCharacters = function(string1, string2) {
         //if result already has the current letter and is not an empty string
         if (result.includes(currentLtr) && result !== '') {
          //filter through comparedstrings, filter needs a func as a param
-            let compare = function compare(str){
+            let compare = function(str){
                 return str.includes(currentLtr)}
             let filteredLtr = stringToCompare.filter(compare);
             console.log(filteredLtr);
