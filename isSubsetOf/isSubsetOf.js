@@ -22,5 +22,25 @@
  */
 
 Array.prototype.isSubsetOf = function(arr) {
-  // your code here
+
+  // iterates through the given array 
+  for (var i = 0; i < arr.length; i++) {
+    //test if each element is in the other array by using includes method 
+    if(arr.includes(arr[i])) { //will always be true...how to compare that element to another element in another array that isn't passed in
+      //return that response (should be a boolean)
+      return true;
+    } else {
+      return false;
+    }
+  }
 };
+
+var a = ['commit','push'];
+console.log(a.isSubsetOf(['commit','rebase','push','blame']));
+
+var b = ['merge','reset','reset'];
+ 
+console.log(b.isSubsetOf(['reset','merge','add','commit']));
+
+var c = ['cat', 'dog', 'pony'];
+console.log(c.isSubsetOf(['horse', 'puppy', 'kitten']));//should be false...see line 29
