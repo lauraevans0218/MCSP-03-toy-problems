@@ -6,4 +6,25 @@
  * whitespace on each side of dad).
  */
 
-var longestPalindrome = function(string) {};
+let longestPalindrome = function(str) {
+    //identify the palindromes in the string first
+let reversed = str.split("").reverse().join("");
+    //check to see if the str is the same when it's reversed
+    return str == reversed; 
+};
+        
+    function longest_palindrome(str){
+        
+    let max_length = 0,
+            maxspace = '';
+        
+        for(let i=0; i < str.length; i++) {
+            //use substring to get each word out of the overall string (start at i until the string length)
+        let eachWord = str.substring(i, str.length);
+        
+            if (longestPalindrome(eachWord)) {
+            return eachWord.length;
+            }
+            //compare eachWord's length amongst the other palindrome words 
+        }
+    };
