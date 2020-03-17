@@ -27,5 +27,30 @@ var DIGIT_VALUES = {
 };
 
 var translateRomanNumeral = function(romanNumeral) {
-  // TODO: Implement me!
+  
+  if (typeof romanNumeral !== "string") {
+    return null;
+  }
+  let result = 0;
+  if (romanNumeral.length === 0) {
+    return result;
+  }
+  let arr = romanNumeral.split("");
+  for (var i = 0; i < arr.length; i++) {
+    if (!DIGIT_VALUES.hasOwnProperty(arr[i])) {
+      return null;
+    }
+    let num = DIGIT_VALUES[arr[i]];
+    let nextNum = DIGIT_VALUES[arr[i+1]];
+    if (nextNum === undefined || nextNum <= num) {
+      result += num;
+    } else {
+      result -= num;
+    }
+    
+  }
+  return result;
+
 };
+
+console.log(translateRomanNumeral('LIX')); 
